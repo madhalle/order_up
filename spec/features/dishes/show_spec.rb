@@ -19,14 +19,16 @@ RSpec.describe "when visiting the dishes show page" do
     expect(page).to have_content(@vegetables.name)
   end
 
-end
-# Order up is an app that tracks chefs, the dishes that they make, and the ingredients that are in those dishes. Chef's have many dishes. Dishes belong to a chef. Dishes have many Ingredients and Ingredients have many dishes. Ingredients should have name and calories.
+  it "will see total calorie count of dish" do
+    visit "/dishes/#{@dish1.id}"
 
-#
-# Story 1 of 3
+    expect(page).to have_content(@dish1.total_cals)
+    expect(page).to have_content(280)
+  end
+
+end
+# # Order up is an app that tracks chefs, the dishes that they make, and the ingredients that are in those dishes. Chef's have many dishes. Dishes belong to a chef. Dishes have many Ingredients and Ingredients have many dishes. Ingredients should have name and calories.
+# Story 2 of 3
 # As a visitor
 # When I visit a dish's show page
-# I see a list of ingredients for that dish
-# and the chef's name
-#
-#
+# I see the total calorie count for that dish.
