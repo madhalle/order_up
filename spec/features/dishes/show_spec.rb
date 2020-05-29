@@ -24,7 +24,6 @@ RSpec.describe "when visiting the dishes show page" do
 
     expect(@dish1.total_cals).to eq(280)
     expect(page).to have_content(@dish1.total_cals)
-    # expect(page).to have_content(280)
   end
 
 end
